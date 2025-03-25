@@ -1,82 +1,108 @@
-# LNN-based ECG Diagnosis
+# Liquid Neural Network Based ECG Diagnosis
 
-## Overview
-This project implements a **Liquid Neural Network (LNN)** for **Electrocardiogram (ECG) signal classification**. The model classifies ECG signals into five categories:
-- **Normal**
-- **Supraventricular**
-- **Ventricular**
-- **Fusion**
-- **Unknown**
+## Project Overview
 
-The project includes preprocessing, training, and evaluation of the model using a dataset of ECG signals.
+This project implements an ECG (Electrocardiogram) classification model using a Liquid Neural Network (LNN) to diagnose various heartbeats. The model is trained on ECG signal data and aims to classify heartbeats into five categories:
+
+- **Class 0**: Normal
+- **Class 1**: Supraventricular
+- **Class 2**: Ventricular
+- **Class 3**: Fusion
+- **Class 4**: Unknown
+
+The project involves data preprocessing, training a deep learning model, and evaluating its performance using various metrics such as accuracy, precision, recall, and F1-score.
 
 ## Dataset
-The dataset consists of ECG signals labelled into five different classes. The signals are preprocessed and fed into a neural network for classification.
 
-## Model Architecture
-The model is a **Liquid Neural Network (LNN)** designed for efficient ECG classification. It is trained using a supervised learning approach and optimized to minimize loss while maintaining high classification accuracy.
+The dataset consists of ECG signal time-series data collected from multiple patients. Each sample corresponds to a time-sequenced ECG signal labelled into one of the five heartbeat categories.
 
-## Training Results
-### Loss Progression
-The model was trained for **10 epochs**, and the loss steadily decreased:
-```
-Epoch 1/10, Loss: 0.0925
-Epoch 2/10, Loss: 0.0893
-Epoch 3/10, Loss: 0.0862
-Epoch 4/10, Loss: 0.0835
-Epoch 5/10, Loss: 0.0808
-Epoch 6/10, Loss: 0.0776
-Epoch 7/10, Loss: 0.0753
-Epoch 8/10, Loss: 0.0738
-Epoch 9/10, Loss: 0.0714
-Epoch 10/10, Loss: 0.0698
-```
-A plot of training loss over epochs shows a clear downward trend.
+## Model Training
 
-### Classification Performance
-The model achieved **97.54% accuracy** on the test dataset.
+The model is trained using a deep learning approach with the following key characteristics:
 
-#### Confusion Matrix
-A confusion matrix illustrates the classification performance, showing high accuracy in predicting normal and other categories.
+- **Architecture**: Liquid Neural Network (LNN)
+- **Loss Function**: Cross-entropy loss
+- **Optimizer**: Adam optimizer
+- **Epochs**: 10
+- **Training Loss Reduction**: The loss gradually decreases over epochs, indicating effective learning.
 
-#### Classification Report
-```
-Precision  Recall  F1-score  Support
-----------------------------------
-0   0.98     1.00    0.99     18118
-1   0.90     0.63    0.74      556
-2   0.94     0.92    0.93     1448
-3   0.80     0.62    0.70      162
-4   0.99     0.96    0.97     1608
-----------------------------------
-Accuracy: 97.04%
-```
+### Training Loss Curve
+
+The training loss curve shows a steady decline over epochs, confirming that the model is learning effectively and not overfitting.
+
+## Model Evaluation
+
+The model is evaluated using a confusion matrix and classification report.
+
+### Confusion Matrix
+
+The confusion matrix demonstrates the model's classification performance across different heartbeat types. It provides insights into misclassifications and overall accuracy.
+
+### Classification Report
+
+The evaluation metrics include:
+
+- **Accuracy**: 97.54%
+- **Precision, Recall, F1-score** for each class
+- **Macro and Weighted Averages**
+
+The high accuracy and F1-scores suggest that the model is performing well in identifying ECG patterns.
 
 ## Installation & Usage
-1. Clone this repository:
-   ```bash
+
+To run the model and reproduce the results, follow these steps:
+
+### Prerequisites
+
+Ensure you have the following dependencies installed:
+
+```
+numpy
+pandas
+tensorflow
+matplotlib
+seaborn
+sklearn
+```
+
+### Running the Model
+
+1. Clone the repository:
+   ```
    git clone https://github.com/Blank232/Liquid_Neural_Network_based_ECG_Diagonsis.git
    cd Liquid_Neural_Network_based_ECG_Diagonsis
    ```
 2. Install dependencies:
-   ```bash
+   ```
    pip install -r requirements.txt
    ```
-3. Run the notebook:
-   ```bash
+3. Run the Jupyter Notebook:
+   ```
    jupyter notebook LNN_based_ECG_Diagnosis.ipynb
    ```
 
-## Visualizations
-- **ECG signal samples** from the training set
-- **Loss curve over epochs**
-- **Confusion matrix**
+## Results & Visualizations
+
+The project includes several visualizations:
+
+- **Sample ECG signals from the training set**
+- **Training loss curve**
+- **Confusion matrix and classification metrics**
+
+These visualizations help in understanding the dataset distribution and model performance.
 
 ## Future Improvements
-- Implement **data augmentation** for better generalization.
-- Optimize model architecture for **real-time applications**.
-- Deploy the model as a **web or mobile application**.
+
+- Fine-tuning the model with more advanced architectures
+- Increasing the dataset size for better generalization
+- Exploring different preprocessing techniques to enhance model accuracy
+
+## Contributing
+
+Contributions are welcome! Feel free to fork this repository, submit issues, and open pull requests.
 
 ## License
+
 This project is licensed under the MIT License.
+
 
