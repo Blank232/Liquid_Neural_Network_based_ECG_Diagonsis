@@ -55,8 +55,8 @@ Accuracy: 97.04%
 ## Installation & Usage
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/LNN-based-ECG-Diagnosis.git
-   cd LNN-based-ECG-Diagnosis
+   git clone https://github.com/Blank232/Liquid_Neural_Network_based_ECG_Diagonsis.git
+   cd Liquid_Neural_Network_based_ECG_Diagonsis
    ```
 2. Install dependencies:
    ```bash
